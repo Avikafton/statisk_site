@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
         container.innerHTML = "";
   
         if (products.length === 0) {
-            container.innerHTML = `<h2 class="empty-category">Der er endnu ingen produkter i kategorien "${formattedCategory}"</h2>`;
+            container.innerHTML = `<h2 class="empty-category">There are no products in the "${formattedCategory}" category yet. </h2>`;
             return;
           }
-  
+   
         products.forEach(showProduct);
       });
   
