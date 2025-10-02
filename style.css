@@ -327,6 +327,8 @@ body, .product-body, .productlist-body {
   background: none;
   border: none;
   cursor: pointer;
+  position: relative; 
+  z-index: 1050;     
 }
 
 .hamburger span {
@@ -334,7 +336,6 @@ body, .product-body, .productlist-body {
   height: 3px;
   background-color: #333;
   border-radius: 2px;
-  z-index: 9999;
 }
 
 .category-hamburger-wrapper .dropdown {
