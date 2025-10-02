@@ -374,12 +374,14 @@ body, .product-body, .productlist-body {
     display: none;
   }
 
-  .category-hamburger-wrapper {
-    display: block;
-    position: absolute;
-    top: 45px;
-    right: 20px;
-    z-index: 1005; 
+  @media (max-width: 700px) {
+    .category-hamburger-wrapper {
+      display: block;
+      position: absolute;
+      top: 45px;
+      right: 20px;
+      z-index: 1031; 
+    }
   }
 
 
