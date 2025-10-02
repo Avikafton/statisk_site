@@ -38,7 +38,7 @@ body, .product-body, .productlist-body {
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  z-index: 1000;
+  z-index: 900;
 }
 
 #filters button:hover,
@@ -121,12 +121,12 @@ body, .product-body, .productlist-body {
   align-items: flex-end;
   justify-content: flex-end; 
   padding: 0 20px 10px 20px;
-  background: rgba(255,255,255,0.9);
+  background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 1000;
 }
 
-/* Logo centreret på desktop */
+
 .site-header .logo,
 .category-header .logo {
   position: absolute;
@@ -156,10 +156,25 @@ body, .product-body, .productlist-body {
   text-decoration: underline;
 }
 
+.dropdown-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1020; 
+}
+
+.dropdown-overlay.visible {
+  display: block;
+}
+
 /* ===================== SELECT CATEGORY ===================== */
 .category-toggle {
   position: relative;
-  z-index: 1002; 
+  z-index: 1000; 
   display: inline-block; 
 }
 
@@ -355,9 +370,7 @@ body, .product-body, .productlist-body {
 /* ===================== RESPONSIVE MOBIL ===================== */
 @media (max-width: 700px) {
   .breadcrumb,
-  .category-toggle,
-  #filters,
-  #sorting {
+  .category-toggle { 
     display: none;
   }
 
