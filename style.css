@@ -334,6 +334,7 @@ body, .product-body, .productlist-body {
   height: 3px;
   background-color: #333;
   border-radius: 2px;
+  z-index: 9999;
 }
 
 .category-hamburger-wrapper .dropdown {
