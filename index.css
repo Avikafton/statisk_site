@@ -138,11 +138,11 @@ body.index-page {
     text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
 }
   
-@media (max-width: 1024px) {
+@media (max-width: 600px) {
     .hamburger { display: flex; }
 }
   
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     body.index-page {
       background-image: url('img/mobile-back.png');
 }
