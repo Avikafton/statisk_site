@@ -1,25 +1,74 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product List</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="header.css">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="productlist-body">
 
-  <header>
+  <header class="category-header">
+    <!-- Breadcrumbs -->
     <nav class="breadcrumb">
-      <a href="index.html">Categories</a> / 
-      <a href="productlist.html">Product List</a>
+        <a href="index.html">Categories</a> / 
+        <a href="productlist.html">Product List</a>
     </nav>
-  </header>
 
-  <h1>Product List</h1>
+<!-- Logo centreret med link til forsiden -->
+<a href="index.html">
+  <img src="img/logo.png" alt="Logo" class="logo">
+</a>
 
-  <main class="product_list_container"></main>
+    <!-- Hamburger ude til højre -->
+    <div class="category-hamburger-wrapper">
+        <button id="hamburgerButton" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-  <script src="js/productlist.js"></script>
+        <ul id="hamburgerDropdown" class="dropdown hidden">
+            <li><a href="productlist.html?category=accessories">Accessories</a></li>
+            <li><a href="productlist.html?category=apparel">Apparel</a></li>
+            <li><a href="productlist.html?category=footwear">Footwear</a></li>
+            <li><a href="productlist.html?category=free-items">Free Items</a></li>
+            <li><a href="productlist.html?category=personal-care">Personal Care</a></li>
+            <li><a href="productlist.html?category=sporting-goods">Sporting Goods</a></li>
+        </ul>
+    </div>
+
+    <!-- Select Category dropdown -->
+    <div class="category-toggle">
+        <button id="toggleButton">Select Category ▼</button>
+        <ul id="categoryDropdown" class="dropdown hidden">
+            <li><a href="productlist.html?category=accessories">Accessories</a></li>
+            <li><a href="productlist.html?category=apparel">Apparel</a></li>
+            <li><a href="productlist.html?category=footwear">Footwear</a></li>
+            <li><a href="productlist.html?category=free-items">Free Items</a></li>
+            <li><a href="productlist.html?category=personal-care">Personal Care</a></li>
+            <li><a href="productlist.html?category=sporting-goods">Sporting Goods</a></li>
+        </ul>
+    </div>
+</header>
+
+<section id="filters">
+  <button data-gender="All" class="active">All</button>
+  <button data-gender="Unisex">Unisex</button>
+  <button data-gender="Women">Women</button>
+  <button data-gender="Men">Men</button>
+</section>
+  
+<section id="sorting">
+  <button data-direction="lohi">Price low to high</button>
+  <button data-direction="hilo">Price high to low</button>
+</section>
+
+<h1>Product List</h1>
+<main class="product_list_container"></main>
+
+<script src="js/productlist.js"></script>
 </body>
 </html>

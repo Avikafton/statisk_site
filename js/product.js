@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ===================== Product API =====================
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
 
@@ -21,25 +22,24 @@ document.addEventListener("DOMContentLoaded", () => {
             ${product.soldout ? "Sold Out" : product.discount ? `<span class="old_price">${product.price},-</span> ${Math.round(product.price - product.price * product.discount / 100)},-` : `${product.price},-`}
           </p>
           <button class="add-to-basket">Add to basket</button>
-      
-${product.category === "Apparel" ? `
-<div class="choose-size">
-  <button class="size">S</button>
-  <button class="size">M</button>
-  <button class="size">L</button>
-  <button class="size">XL</button>
-</div>
-` : product.category === "Footwear" ? `
-<div class="choose-size">
-  <button class="size">36</button>
-  <button class="size">37</button>
-  <button class="size">38</button>
-  <button class="size">39</button>
-  <button class="size">40</button>
-  <button class="size">41</button>
-  <button class="size">42</button>
-</div>
-` : ''}
+
+          ${product.category === "Apparel" ? `
+          <div class="choose-size">
+            <button class="size">S</button>
+            <button class="size">M</button>
+            <button class="size">L</button>
+            <button class="size">XL</button>
+          </div>` : product.category === "Footwear" ? `
+          <div class="choose-size">
+            <button class="size">36</button>
+            <button class="size">37</button>
+            <button class="size">38</button>
+            <button class="size">39</button>
+            <button class="size">40</button>
+            <button class="size">41</button>
+            <button class="size">42</button>
+          </div>` : ''}
+
           <div class="extra-info">
             <p><strong>Color:</strong> ${product.basecolour}</p>
             <p><strong>Gender:</strong> ${product.gender}</p>
@@ -49,8 +49,45 @@ ${product.category === "Apparel" ? `
       `;
 
       brandSection.innerHTML = `
-      <h2>About Brand</h2>
-      <p>${product.brandname} is a very popular brand. The ${product.productdisplayname} is one of their standout products, loved for its quality and design.</p>
-    `;
+        <h2>About Brand</h2>
+        <p>${product.brandname} is a very popular brand. The ${product.productdisplayname} is one of their standout products, loved for its quality and design.</p>
+      `;
     });
+
+  // ===================== Select Category (Desktop) =====================
+  const toggleButton = document.getElementById("toggleButton");
+  const categoryDropdown = document.getElementById("categoryDropdown");
+
+  if (toggleButton && categoryDropdown) {
+    toggleButton.addEventListener("click", e => {
+      e.stopPropagation();
+      categoryDropdown.classList.toggle("visible");
+    });
+
+    document.addEventListener("click", e => {
+      if (!toggleButton.contains(e.target) && !categoryDropdown.contains(e.target)) {
+        categoryDropdown.classList.remove("visible");
+      }
+    });
+  }
+
+  // ===================== Hamburger (Mobil) =====================
+  const hamburgerButton = document.getElementById('hamburgerButton');
+  const hamburgerDropdown = document.getElementById('hamburgerDropdown');
+  const wrapper = document.querySelector(".category-hamburger-wrapper");
+
+  if (hamburgerButton && hamburgerDropdown && wrapper) {
+    hamburgerButton.addEventListener('click', e => {
+      e.stopPropagation();
+      wrapper.classList.toggle('active');
+      hamburgerDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.category-hamburger-wrapper')) {
+        hamburgerDropdown.classList.add('hidden');
+        wrapper.classList.remove('active');
+      }
+    });
+  }
 });

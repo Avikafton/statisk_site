@@ -1,38 +1,53 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Categories</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="index.css" />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 </head>
+<body class="index-page">
 
-<body>
-  <header>
-    <div class="logo-container">
-      <img src="img/logo.png" alt="Logo" class="logo">
-    </div>
-    <nav>   
-      <a href="#">Categories</a>
-      <a href="#">Brands</a>
-      <a href="#">Seasons</a>
-    </nav>
-  </header>
+<header class="site-header">
+<!-- Logo centreret med link til forsiden -->
+<a href="index.html">
+  <img src="img/logo.png" alt="Logo" class="logo">
+</a>
 
-  <main>
+    <button id="hamburgerButton" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+<nav id="hamburgerDropdown" class="dropdown hidden">
+    <a href="productlist.html?category=accessories">Accessories</a>
+    <a href="productlist.html?category=apparel">Apparel</a>
+    <a href="productlist.html?category=footwear">Footwear</a>
+    <a href="productlist.html?category=free-items">Free Items</a>
+    <a href="productlist.html?category=personal-care">Personal Care</a>
+    <a href="productlist.html?category=sporting-goods">Sporting Goods</a>
+</nav>
+
+<main>
     <section class="categories">
-      <h2>Categories</h2>
-      <ul class="category-list" id="category-list">
+      <ul class="category-grid">
         <li><a href="productlist.html?category=accessories">Accessories</a></li>
         <li><a href="productlist.html?category=apparel">Apparel</a></li>
         <li><a href="productlist.html?category=footwear">Footwear</a></li>
         <li><a href="productlist.html?category=free-items">Free Items</a></li>
         <li><a href="productlist.html?category=personal-care">Personal Care</a></li>
-        <li><strong><a href="productlist.html?category=sporting-goods">Sporting Goods</a></strong></li>
+        <li><a href="productlist.html?category=sporting-goods">Sporting Goods</a></li>
       </ul>
-  </main>
+    </section>
+    
+    <section class="mobile-text">
+      <h1>Made for comfort</h1>
+    </section>
+</main>
 
-  <script src="js/index.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
