@@ -25,6 +25,8 @@ body, .product-body, .productlist-body {
   gap: 1rem;
   margin: 1.5rem 0;
   justify-content: center;
+  position: relative; 
+  z-index: 1001;     
 }
 
 #filters button,
@@ -38,7 +40,7 @@ body, .product-body, .productlist-body {
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  z-index: 900;
+  z-index: inherit; 
 }
 
 #filters button:hover,
@@ -55,6 +57,7 @@ body, .product-body, .productlist-body {
   transform: scale(0.97);
   transition: transform 0.1s;
 }
+
 
 /* ===================== PRODUCT CARDS ===================== */
 .product_list_container {
@@ -123,7 +126,7 @@ body, .product-body, .productlist-body {
   padding: 0 20px 10px 20px;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 1000;
+  z-index: 999;
 }
 
 
@@ -197,14 +200,14 @@ body, .product-body, .productlist-body {
   display: none;
   position: absolute;
   top: 100%;
-  right: 20;
+  right: 20px;
   background-color: #fff;
   min-width: 180px;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   list-style: none;
   padding: 0;
-  z-index: 1003;
+  z-index: 1005; 
 }
 
 .category-toggle .dropdown.visible {
