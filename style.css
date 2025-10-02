@@ -159,8 +159,8 @@ body, .product-body, .productlist-body {
 /* ===================== SELECT CATEGORY ===================== */
 .category-toggle {
   position: relative;
-  z-index: 1002; /* ligger over øvrigt indhold */
-  display: inline-block; /* så dropdown ikke fylder hele linjen */
+  z-index: 1002; 
+  display: inline-block; 
 }
 
 .category-toggle button {
@@ -209,7 +209,6 @@ body, .product-body, .productlist-body {
   cursor: pointer;
   transition: background 0.2s;
 }
-
 
 
 /* --- PRODUCT.HTML – PRODUCT DETAIL--- */
@@ -295,7 +294,6 @@ body, .product-body, .productlist-body {
 }
 
 
-
 /* ===================== HAMBURGER ===================== */
 .category-hamburger-wrapper {
   display: none;
@@ -334,7 +332,7 @@ body, .product-body, .productlist-body {
   padding: 10px 0;
   list-style: none;
   min-width: 200px;
-  line-height: 2.2; /* afstand mellem links */
+  line-height: 2.2;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   z-index: 1005;
 }
@@ -356,7 +354,6 @@ body, .product-body, .productlist-body {
 
 /* ===================== RESPONSIVE MOBIL ===================== */
 @media (max-width: 700px) {
-  /* Skjul breadcrumbs, select category og filter knapper */
   .breadcrumb,
   .category-toggle,
   #filters,
@@ -364,30 +361,28 @@ body, .product-body, .productlist-body {
     display: none;
   }
 
-
-  /* Burgerikon til højre */
   .category-hamburger-wrapper {
     display: block;
     position: absolute;
     top: 45px;
     right: 20px;
-    z-index: 1005; /* højere end dropdown */
+    z-index: 1005; 
   }
 
-  /* Dropdown overlay over alt indhold */
+
   .category-hamburger-wrapper .dropdown {
-    position: fixed;   /* ligger over alt indhold */
-    top: 75px;         /* lige under header */
+    position: fixed;  
+    top: 75px;         
     left: 0;
-    right: 0;          /* fylder hele bredden */
+    right: 0;          
     background: #fff;
     display: none;
     flex-direction: column;
-    z-index: 9999;     /* skal være højere end filters/produktkort */
+    z-index: 9999;     
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     border-bottom: 1px solid #ddd;
-    max-height: 80vh;  /* forhindrer dropdown i at fylde hele skærmen */
-    overflow-y: auto;  /* scroll hvis mange links */
+    max-height: 80vh;  
+    overflow-y: auto;  
   }
 
   .category-hamburger-wrapper .dropdown li {

@@ -40,7 +40,6 @@ body.index-page {
     z-index: 1000;
 }
   
-
 .hamburger {
     margin-top: 10px;
     display: none;
@@ -61,7 +60,6 @@ body.index-page {
     border-radius: 2px;
 }
   
-
 .dropdown {
     display: flex; 
     flex-direction: column;
@@ -127,7 +125,6 @@ body.index-page {
     box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
   
-
 .mobile-text h1 {
     display: none;
     font-size: 6rem;
@@ -141,7 +138,6 @@ body.index-page {
     text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
 }
   
-
 @media (max-width: 1024px) {
     .hamburger { display: flex; }
 }
